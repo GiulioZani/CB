@@ -5,7 +5,7 @@
 ## Argomenti da rivedere:
 
 - Try except 
-  `
+  ```
   try:
       x = 1/0
   except ZeroDivisionError:
@@ -16,7 +16,7 @@
       print('No exceptions here!')
   finally:
       print('This will always be executed!')
-  `
+  ```
 - Dictionaries
 - Sets
 
