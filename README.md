@@ -1,4 +1,4 @@
-# Ripetizioni di python
+# Ripetizioni di Python
 
 [moodle](https://elearning.dei.unipd.it/course/view.php?id=4707)
 
@@ -16,6 +16,16 @@
       print('No exceptions here!')
   finally:
       print('This will always be executed!')
+  ```
+  Altro esempio:
+  ```python
+  class FancyException(Exception):
+      pass
+
+  try:
+      raise FancyException
+  except FancyException:
+      print('Raised a fancy exception')
   ```
 - Dictionaries
 - Sets
