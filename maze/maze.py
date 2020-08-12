@@ -4,6 +4,8 @@ class Maze:
         data_grezzi = f.read()
         lines = data_grezzi.split('\n')[:-1]
         self.adjacents = {}
+        self.height = len(lines)
+        self.width = len(lines[0])
         for i in range(len(lines)):
             line = lines[i]
             for j in range(len(line)):
@@ -33,10 +35,16 @@ class Maze:
                     if i == len(lines)-1:
                         self.directions[(i, j)] = 'S'
 
-        print(self.directions)
-
     def __str__(self):
-        pass
+        result = ''
+        for i in range(self.height):
+            for j in range(self.width):
+                if (i, j) in self.directions:
+                    result += f' {self.directions[(i, j)]} '
+                else:
+                    result += ' * '
+            result += '\n'
+        return result
 
     def help(self):
         done = False
@@ -63,7 +71,7 @@ class Maze:
 def main():
     maze = Maze('data.txt')
     maze.help()
-    print(maze.directions)
+    print(maze)
 
 if __name__ == '__main__':
     main()
